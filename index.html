@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harvey Du | Personal Website</title>
+  <meta name="description" content="Personal academic website for Harvey Du." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">Harvey Du</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Personal Website</p>
+          <h1>Harvey Du</h1>
+          <p class="lead">
+            PhD student in Mechanical and Materials Engineering at Western University,
+            working on urban flow, atmospheric boundary layer dynamics, and data-driven flow reconstruction.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#research">View Research</a>
+            <a class="button" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+        <aside class="card profile-card">
+          <h2>Quick Info</h2>
+          <ul>
+            <li><strong>Affiliation:</strong> Western University</li>
+            <li><strong>Field:</strong> Fluid mechanics / CFD / ROM</li>
+            <li><strong>Focus:</strong> Urban flow and sensor-informed modelling</li>
+            <li><strong>Location:</strong> London, Ontario</li>
+          </ul>
+          <p class="small-note">Edit any of these details directly in <code>index.html</code>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About</h2>
+        <p>
+          I am a PhD student studying fluid mechanics, urban aerodynamics, and data-driven methods for
+          reconstructing complex flow fields from sparse measurements. My work combines experiments,
+          large-eddy simulation, and machine learning to better understand the interaction between the
+          atmospheric boundary layer and street-canyon flow.
+        </p>
+        <p>
+          This website can be used to share research updates, publications, conference presentations,
+          datasets, code repositories, and contact information.
+        </p>
+      </div>
+    </section>
+
+    <section id="research" class="section alt">
+      <div class="container">
+        <h2>Research Interests</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3>Urban Flow</h3>
+            <p>
+              Turbulent flow within and above urban street canyons, including ventilation,
+              scalar transport, and the role of upstream morphology.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Boundary Layer Dynamics</h3>
+            <p>
+              Coupling between the atmospheric boundary layer and local urban flow,
+              with attention to coherent structures and large-scale organisation.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Data-Driven Modelling</h3>
+            <p>
+              Sensor-informed reduced-order modelling, neural networks, and flow reconstruction
+              from sparse measurements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Sensor-Informed Flow Reconstruction</h3>
+            <p>
+              Developing reduced-order and neural-network-based methods to reconstruct large-scale
+              atmospheric boundary layer flow structures from limited experimental measurements.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Large-Eddy Simulation of Urban Canyons</h3>
+            <p>
+              Investigating ventilation, thermal effects, and particle transport in idealised and
+              realistic urban canyons using OpenFOAM.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Flow-Structure Interaction of Large Scales</h3>
+            <p>
+              Analysing how outer-layer structures modulate canyon flow and affect near-street
+              turbulence and transport.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Future Work</h3>
+            <p>
+              Replace this block with current side projects, collaborations, internships,
+              or upcoming conference work.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section alt">
+      <div class="container narrow">
+        <h2>Publications</h2>
+        <p class="small-note">Replace these with your own formatted citations and links.</p>
+        <ol class="publication-list">
+          <li>
+            <strong>Du, H.</strong>, Savory, E., &amp; Perret, L. (2023).
+            Effect of morphology and an upstream tall building on the mean turbulence statistics of a street canyon flow.
+            <em>Building and Environment</em>.
+          </li>
+          <li>
+            <strong>Du, H.</strong>, Perret, L., &amp; Savory, E. (2024).
+            Effect of urban morphology and an upstream tall building on the scale interaction between the overlying boundary layer and a street canyon.
+            <em>Boundary-Layer Meteorology</em>.
+          </li>
+          <li>
+            <strong>Du, H.</strong>, Perret, L., &amp; Savory, E. (2025).
+            Investigation of boundary layer scale interactions over realistic morphology influenced by an upstream tall building using the SPOD method.
+            <em>Boundary-Layer Meteorology</em>.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <p>
+          You can list your email, GitHub, Google Scholar, LinkedIn, ORCID, and CV here.
+        </p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> your.email@example.com</li>
+          <li><strong>GitHub:</strong> github.com/yourusername</li>
+          <li><strong>Google Scholar:</strong> Add your profile link</li>
+          <li><strong>CV:</strong> Link to a PDF in this repository</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Harvey Du. Built with GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

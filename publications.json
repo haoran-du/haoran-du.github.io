@@ -1,18 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
-  <rect width="1200" height="760" fill="#f4f7fb"/>
-  <rect x="70" y="90" width="1060" height="580" rx="28" fill="#ffffff" stroke="#d7dde7" stroke-width="3"/>
-  <g>
-    <rect x="160" y="180" width="210" height="390" rx="18" fill="#ebf0f8" stroke="#cbd6e5"/>
-    <rect x="495" y="250" width="210" height="250" rx="18" fill="#eef2f8" stroke="#cbd6e5"/>
-    <rect x="830" y="180" width="210" height="390" rx="18" fill="#ebf0f8" stroke="#cbd6e5"/>
-    <path d="M380 375h95" stroke="#2f5a94" stroke-width="10" stroke-linecap="round"/>
-    <path d="M710 375h95" stroke="#2f5a94" stroke-width="10" stroke-linecap="round"/>
-    <polygon points="470,345 520,375 470,405" fill="#2f5a94"/>
-    <polygon points="805,345 855,375 805,405" fill="#2f5a94"/>
-  </g>
-  <text x="265" y="625" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#22354b">Sparse sensors</text>
-  <text x="600" y="625" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#22354b">Reduced model</text>
-  <text x="935" y="625" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#22354b">Reconstructed field</text>
-  <text x="600" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#203246">Model-workflow figure placeholder</text>
-  <text x="600" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#5f6d7f">Replace with AE, SPOD, or LES workflow figures</text>
-</svg>
+[
+  {
+    "year": 2025,
+    "title": "Investigation of boundary layer scale interactions over realistic morphology influenced by an upstream tall building using the SPOD method",
+    "authors": "Du, H.; Perret, L.; Savory, E.",
+    "venue": "Boundary-Layer Meteorology",
+    "status": "Published",
+    "image": "assets/images/featured-rom.svg",
+    "note": "Add DOI or article link here"
+  },
+  {
+    "year": 2024,
+    "title": "Effect of urban morphology and an upstream tall building on the scale interaction between the overlying boundary layer and a street canyon",
+    "authors": "Du, H.; Perret, L.; Savory, E.",
+    "venue": "Boundary-Layer Meteorology",
+    "status": "Published",
+    "image": "assets/images/featured-urban.svg",
+    "note": "Add DOI or article link here"
+  },
+  {
+    "year": 2023,
+    "title": "Effect of morphology and an upstream tall building on the mean turbulence statistics of a street canyon flow",
+    "authors": "Du, H.; Savory, E.; Perret, L.",
+    "venue": "Building and Environment",
+    "status": "Published",
+    "image": "assets/images/featured-urban.svg",
+    "note": "Add DOI or article link here"
+  },
+  {
+    "year": 2026,
+    "title": "Data-driven reconstruction of large scales in atmospheric boundary layer flow with sparse measurements",
+    "authors": "Du, H.; Savory, E.; Perret, L.",
+    "venue": "Experiments in Fluids",
+    "status": "In peer review",
+    "image": "assets/images/featured-rom.svg",
+    "note": "Update status when accepted"
+  }
+]

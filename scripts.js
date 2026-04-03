@@ -1,38 +1,34 @@
-[
-  {
-    "year": 2025,
-    "title": "Investigation of boundary layer scale interactions over realistic morphology influenced by an upstream tall building using the SPOD method",
-    "authors": "Du, H.; Perret, L.; Savory, E.",
-    "venue": "Boundary-Layer Meteorology",
-    "status": "Published",
-    "image": "assets/images/featured-rom.svg",
-    "note": "Add DOI or article link here"
-  },
-  {
-    "year": 2024,
-    "title": "Effect of urban morphology and an upstream tall building on the scale interaction between the overlying boundary layer and a street canyon",
-    "authors": "Du, H.; Perret, L.; Savory, E.",
-    "venue": "Boundary-Layer Meteorology",
-    "status": "Published",
-    "image": "assets/images/featured-urban.svg",
-    "note": "Add DOI or article link here"
-  },
-  {
-    "year": 2023,
-    "title": "Effect of morphology and an upstream tall building on the mean turbulence statistics of a street canyon flow",
-    "authors": "Du, H.; Savory, E.; Perret, L.",
-    "venue": "Building and Environment",
-    "status": "Published",
-    "image": "assets/images/featured-urban.svg",
-    "note": "Add DOI or article link here"
-  },
-  {
-    "year": 2026,
-    "title": "Data-driven reconstruction of large scales in atmospheric boundary layer flow with sparse measurements",
-    "authors": "Du, H.; Savory, E.; Perret, L.",
-    "venue": "Experiments in Fluids",
-    "status": "In peer review",
-    "image": "assets/images/featured-rom.svg",
-    "note": "Update status when accepted"
+async function loadPublications() {
+  const container = document.getElementById('publication-list');
+  if (!container) return;
+
+  try {
+    const response = await fetch('publications.json', { cache: 'no-store' });
+    const publications = await response.json();
+
+    publications
+      .sort((a, b) => b.year - a.year)
+      .forEach((pub) => {
+        const article = document.createElement('article');
+        article.className = 'pub-card';
+        article.innerHTML = `
+          <div class="pub-figure">
+            <img src="${pub.image}" alt="Illustration for ${pub.title}">
+          </div>
+          <div class="pub-copy">
+            <p class="pub-meta">${pub.year} · ${pub.status}</p>
+            <h3>${pub.title}</h3>
+            <p>${pub.authors}</p>
+            <p><em>${pub.venue}</em></p>
+            <p class="pub-note">${pub.note}</p>
+          </div>
+        `;
+        container.appendChild(article);
+      });
+  } catch (error) {
+    container.innerHTML = '<p>Unable to load publications.json. Check that the file is present in the repository root.</p>';
   }
-]
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+loadPublications();

@@ -1,4 +1,3 @@
-/* deploy test */
 :root {
   --bg: #fbfcfe;
   --surface: #ffffff;
@@ -252,14 +251,15 @@ figcaption,
 
 .section-grid {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 2.2rem;
   align-items: start;
 }
 
 .section-title-block {
   position: sticky;
   top: 5.4rem;
+  padding-right: 0.5rem;
 }
 
 .section-body {
@@ -285,6 +285,7 @@ figcaption,
 
 .research-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .card,
@@ -384,6 +385,7 @@ figcaption,
 
   .section-title-block {
     position: static;
+    padding-right: 0;
   }
 }
 

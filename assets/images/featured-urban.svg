@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7fb"/>
+      <stop offset="100%" stop-color="#e7edf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="70" y="90" width="1060" height="580" rx="28" fill="#ffffff" stroke="#d7dde7" stroke-width="3"/>
+  <g fill="#c9d5e6">
+    <rect x="160" y="355" width="120" height="180"/>
+    <rect x="320" y="295" width="160" height="240"/>
+    <rect x="540" y="245" width="130" height="290"/>
+    <rect x="710" y="330" width="150" height="205"/>
+    <rect x="900" y="275" width="135" height="260"/>
+  </g>
+  <path d="M110 570 C220 455, 330 615, 450 515 S700 455, 825 520 S1010 600, 1090 470" fill="none" stroke="#355f9d" stroke-width="11" stroke-linecap="round"/>
+  <path d="M115 620 C240 505, 355 670, 500 570 S760 505, 900 595 S1040 655, 1095 560" fill="none" stroke="#86a7d6" stroke-width="8" stroke-linecap="round"/>
+  <text x="600" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#203246">Published-work figure placeholder</text>
+  <text x="600" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#5f6d7f">Replace with a paper figure or canyon-flow image</text>
+</svg>

@@ -20,7 +20,8 @@ async function loadPublications() {
             <h3>${pub.title}</h3>
             <p>${pub.authors}</p>
             <p><em>${pub.venue}</em></p>
-            <p class="pub-note">${pub.note}</p>
+            ${pub.doi ? `<p class="pub-note">DOI: <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">${pub.doi}</a></p>` : ""}
+            ${pub.note ? `<p class="pub-note">${pub.note}</p>` : ""}
           </div>
         `;
         container.appendChild(article);

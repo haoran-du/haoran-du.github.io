@@ -5,7 +5,7 @@
     "authors": "Du, H.; Perret, L.; Savory, E.",
     "venue": "Boundary-Layer Meteorology",
     "status": "Published",
-    "image": "assets/images/featured-rom.svg",
+    "image": "assets/images/Paper3.svg",
     "note": "DOI: 10.1007/s10546-025-00922-z"
   },
   {
@@ -14,7 +14,7 @@
     "authors": "Du, H.; Perret, L.; Savory, E.",
     "venue": "Boundary-Layer Meteorology",
     "status": "Published",
-    "image": "assets/images/featured-urban.svg",
+    "image": "assets/images/Paper2.svg",
     "note": "DOI: 10.1007/s10546-023-00844-8"
   },
   {
@@ -23,7 +23,7 @@
     "authors": "Du, H.; Savory, E.; Perret, L.",
     "venue": "Building and Environment",
     "status": "Published",
-    "image": "assets/images/featured-urban.svg",
+    "image": "assets/images/Paper1.svg",
     "note": "DOI: 10.1016/j.buildenv.2023.110428"
   },
   {
@@ -32,7 +32,7 @@
     "authors": "Du, H.; Savory, E.; Perret, L.",
     "venue": "Experiments in Fluids",
     "status": "In peer review",
-    "image": "assets/images/featured-rom.svg",
+    "image": "assets/images/Paper4.svg",
     "note": "Update status when accepted"
   }
 ]

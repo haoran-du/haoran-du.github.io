@@ -114,7 +114,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.78fr);
   gap: 1.35rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .hero-copy,
@@ -132,14 +132,19 @@ h3 {
 }
 
 .profile-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
   overflow: hidden;
 }
 
 .profile-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  min-height: 0;
   object-fit: cover;
   border-bottom: 1px solid var(--line);
+  aspect-ratio: auto;
 }
 
 .profile-meta {

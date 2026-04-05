@@ -138,14 +138,7 @@ h3 {
   overflow: hidden;
 }
 
-.profile-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  border-bottom: 1px solid var(--line);
-  aspect-ratio: auto;
-}
+
 
 .profile-meta {
   padding: 1rem 1.1rem 1.2rem;

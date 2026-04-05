@@ -112,8 +112,8 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.78fr);
-  gap: 1.35rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.78fr);
+  gap: 1.75rem;
   align-items: stretch;
 }
 
@@ -129,16 +129,27 @@ h3 {
 
 .hero-copy {
   padding: 2.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-card {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-
+.profile-photo {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+  aspect-ratio: auto;
+}
 
 .profile-meta {
   padding: 1rem 1.1rem 1.2rem;
@@ -269,17 +280,20 @@ figcaption,
 .research-grid,
 .figure-gallery,
 .publication-grid,
-.contact-grid,
-.split-output {
+.contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
 }
 
 .info-grid,
-.split-output,
 .contact-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.split-output {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
 .research-grid {
@@ -384,7 +398,11 @@ figcaption,
 
   .section-title-block {
     position: static;
-    padding-right: 0;
+  }
+
+  .profile-photo {
+    height: auto;
+    max-height: 720px;
   }
 }
 

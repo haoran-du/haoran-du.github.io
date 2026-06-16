@@ -427,3 +427,18 @@ figcaption,
     flex-direction: column;
   }
 }
+.qr-block-small {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.qr-image-small {
+  width: 125px;
+  height: auto;
+  display: block;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}

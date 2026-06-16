@@ -430,7 +430,7 @@ figcaption,
 .qr-block-small {
   margin-top: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .qr-image-small {
@@ -441,4 +441,5 @@ figcaption,
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 12px;
+  margin-left: 0;
 }

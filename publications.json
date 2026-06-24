@@ -35,4 +35,13 @@
     "image": "assets/images/Paper4.svg",
     "note": "Update status when accepted"
   }
+  {
+    "year": 2026,
+    "title": "Observability of three-dimensional large-scale atmospheric boundary-layer motions from a single high-frequency plane",
+    "authors": "Du, H., Savory, E., Perret, L.",
+    "venue": "Physics of Fluids",
+    "status": "To be Submitted",
+    "image": "assets/images/Paper5.svg",
+    "note": "Update status when accepted"
+  }
 ]

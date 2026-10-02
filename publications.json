@@ -34,32 +34,5 @@
     "status": "Accepted",
     "image": "assets/images/Paper4.svg",
     "note": "Update status when accepted"
-  },
-  {
-    "year": 2027,
-    "title": "Plane-only spectral-spatial Taylor transport for retained large-scale flow reconstruction",
-    "authors": "Du, H., Perret, L., Savory, E.",
-    "venue": "/",
-    "status": "To be submitted",
-    "image": "assets/images/Paper5.svg",
-    "note": "Update status when accepted"
-  }
-  {
-    "year": 2027,
-    "title": "A comparison of mean ﬂow and turbulence statistics in morphological and idealized street canyon models",
-    "authors": "Du, H., Perret, L., Savory, E.",
-    "venue": "/",
-    "status": "To be submitted",
-    "image": "assets/images/Paper6.svg",
-    "note": "Update status when accepted"
-  }
-  {
-    "year": 2027,
-    "title": "Three-dimensional street-canyon flow and cross-plane reconstruction in the wake of a tall building",
-    "authors": "Du, H., Perret, L., Savory, E.",
-    "venue": "/",
-    "status": "To be submitted",
-    "image": "assets/images/Paper7.svg",
-    "note": "Update status when accepted"
   }
 ]

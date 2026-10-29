@@ -38,7 +38,7 @@ Open `http://127.0.0.1:4173`. Stop the preview with Ctrl+C.
 - Edit page content in `site/pages/*.html`.
 - Edit shared identity, contact details, CV path, and navigation in `site/config.json`.
 - Edit the shared header/footer in `site/layout.html`.
-- Edit `publications.json` to maintain the publication list. Papers are sorted by year. The existing `year`, `title`, `authors`, `venue`, `status`, `image`, `doi`, and optional `note` fields are supported.
+- Edit `publications.json` to maintain the publication list. Papers are sorted by year. The existing `year`, `title`, `authors`, `venue`, `status`, `image`, `doi`, and optional `note` fields are supported. The optional `summary` field adds a short plain-language explanation below the citation. Keep summaries focused on the research question and main finding, and check them against the linked paper. The current four summaries paraphrase the publishers’ abstracts or highlights.
 - Edit `style.css` for the design and `scripts.js` for optional browser enhancements.
 - Add figures and CVs under `assets/`.
 - Run `npm run build` after editing templates, configuration, or publication data. The root HTML files are generated; do not edit them directly.

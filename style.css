@@ -534,6 +534,14 @@ h3 {
   color:var(--ink)
 }
 
+.publication .publication-summary {
+  max-width:72ch;
+  margin:14px 0 10px;
+  color:var(--ink);
+  font-size:.92rem;
+  line-height:1.7;
+}
+
 .publication .doi {
   display:inline-block;
   font-size:.76rem;

@@ -6,6 +6,7 @@
     "venue": "Boundary-Layer Meteorology",
     "status": "Published",
     "image": "assets/images/Paper3.svg",
+    "summary": "Using wind-tunnel data, this study separates repeating airflow patterns to examine how large swirls interact with smaller turbulent motions. It finds that a very tall building changes these interactions across a wide area behind it, except near the centre of its wake.",
     "doi": "10.1007/s10546-025-00922-z"
   },
   {
@@ -15,6 +16,7 @@
     "venue": "Boundary-Layer Meteorology",
     "status": "Published",
     "image": "assets/images/Paper2.svg",
+    "summary": "Wind-tunnel measurements reveal how large swirls of air above a street interact with smaller turbulent motions between buildings. When a building upwind is much taller than its neighbours, the swirls it creates can dominate this interaction.",
     "doi": "10.1007/s10546-023-00844-8"
   },
   {
@@ -24,6 +26,7 @@
     "venue": "Building and Environment",
     "status": "Published",
     "image": "assets/images/Paper1.svg",
+    "summary": "Wind-tunnel experiments examine how a neighbourhood’s layout and a tall building upwind change airflow in a street between buildings. In the cases studied, increasing the tall building’s height reduced air exchange through the street’s open top, while changing its shape had little effect on turbulence within the street.",
     "doi": "10.1016/j.buildenv.2023.110428"
   },
   {
@@ -33,6 +36,7 @@
     "venue": "Experiments in Fluids",
     "status": "Published",
     "image": "assets/images/Paper4.svg",
+    "summary": "This study tests whether a few wind measurements can recover the larger patterns in a turbulent flow. Of the four methods compared, a neural-network model that uses information over time performs best overall and most accurately tracks the movement of these large-scale structures.",
     "doi": "10.1007/s00348-026-04330-y"
   }
 ]

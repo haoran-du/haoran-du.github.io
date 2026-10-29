@@ -1,12 +1,16 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = (file) => readFile(path.join(root, file), 'utf8');
 const config = JSON.parse(await read('site/config.json'));
 const publications = JSON.parse(await read('publications.json')).sort((a, b) => b.year - a.year);
 const layout = await read('site/layout.html');
+// Change asset URLs when their content changes so cached Pages styles stay current.
+const assetUrl = async (file) => `${file}?v=${createHash('sha256').update((await read(file)).replace(/\r\n/g, '\n')).digest('hex').slice(0, 12)}`;
+const assets = { 'asset.stylesheet': await assetUrl('style.css'), 'asset.script': await assetUrl('scripts.js') };
 const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const doi = (value = '') => {
   const clean = value.trim().replace(/^doi:\s*/i, '').replace(/^https?:\/\/doi\.org\//i, '');
@@ -37,6 +41,7 @@ for (const page of config.pages) {
   if (files.has(page.file) || ids.has(page.id)) throw new Error(`Duplicate page: ${page.id}`);
   files.add(page.file); ids.add(page.id);
   const tokens = {
+    ...assets,
     ...Object.fromEntries(Object.entries(config).filter(([, value]) => typeof value === 'string').map(([key, value]) => [`site.${key}`, escape(value)])),
     ...Object.fromEntries(Object.entries(page).map(([key, value]) => [`page.${key}`, escape(value)])),
     'page.canonical': escape(`${config.url.replace(/\/$/, '')}/${page.file === 'index.html' ? '' : page.file}`),

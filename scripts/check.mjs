@@ -20,7 +20,7 @@ for (const [file, html] of pages) {
     const url = match[1];
     if (/^(?:https?:|mailto:|data:)/.test(url)) continue;
     const [targetFile, hash] = url.split('#');
-    const target = targetFile || file;
+    const target = targetFile.split('?')[0] || file;
     assert((await stat(path.join(root, target))).isFile(), `${file}: missing target ${target}`);
     if (hash) assert(pages.get(target)?.includes(`id="${hash}"`), `${file}: missing anchor ${url}`);
     links++;

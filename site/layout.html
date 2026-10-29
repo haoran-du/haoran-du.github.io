@@ -21,23 +21,18 @@
   <header class="site-header">
     <div class="container masthead">
       <a class="brand" href="index.html">{{site.name}}<span>{{site.tagline}}</span></a>
-      <p class="institution">{{site.institution}}<span>{{site.location}}</span></p>
     </div>
     <div class="navigation-wrap">
       <div class="container navigation-inner">
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">☰</span></button>
         <nav class="site-nav" id="primary-nav" aria-label="Main navigation">{{navigation}}</nav>
-        <a class="nav-cv" href="{{site.cv}}">Curriculum vitae <span aria-hidden="true">↗</span></a>
+        <a class="nav-cv" href="{{site.cv}}" aria-label="CV (PDF)">CV <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </header>
   <main id="main" tabindex="-1">{{content}}</main>
   <footer class="site-footer">
-    <div class="container footer-main">
-      <div><a class="footer-name" href="index.html">{{site.name}}</a><p>{{site.affiliation}}<br>{{site.institution}} · {{site.location}}</p></div>
-      <div class="footer-links"><a href="mailto:{{site.email}}">Email</a><a href="{{site.scholar}}">Google Scholar <span aria-hidden="true">↗</span></a><a href="{{site.github}}">GitHub <span aria-hidden="true">↗</span></a></div>
-    </div>
-    <div class="container footer-bottom"><p>© <span id="year">2026</span> {{site.name}}</p><p>Hosted on GitHub Pages</p></div>
+    <div class="container footer-bottom"><p>© <span id="year">2026</span> {{site.name}}</p></div>
   </footer>
 </body>
 </html>

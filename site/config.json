@@ -16,8 +16,10 @@
     { "id": "home", "label": "Home", "file": "index.html", "title": "Haoran Du | Environmental Fluid Mechanics", "description": "Haoran Du studies atmospheric turbulence, urban flows, wind turbine wakes, and sensor-informed reduced-order modelling at Western University." },
     { "id": "research", "label": "Research", "file": "research.html", "title": "Research | Haoran Du", "description": "Wind-tunnel experiments, large-eddy simulations, and sensor-informed models of urban canopy flow and wind turbine wakes." },
     { "id": "publications", "label": "Publications", "file": "publications.html", "title": "Publications | Haoran Du", "description": "Selected journal publications and conference presentations by Haoran Du in environmental fluid mechanics." },
-    { "id": "teaching", "label": "Teaching", "file": "teaching.html", "title": "Teaching | Haoran Du", "description": "Teaching experience in fluid mechanics, thermodynamics, heat transfer, and fluid machinery." },
-    { "id": "about", "label": "About", "file": "about.html", "title": "About | Haoran Du", "description": "Academic background, research appointments, and awards of Haoran Du." },
     { "id": "contact", "label": "Contact", "file": "contact.html", "title": "Contact | Haoran Du", "description": "Contact Haoran Du at Western University in London, Ontario, Canada." }
+  ],
+  "redirects": [
+    { "file": "about.html", "target": "index.html#background", "label": "Academic background" },
+    { "file": "teaching.html", "target": "cv", "label": "Teaching experience in the CV" }
   ]
 }

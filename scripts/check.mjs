@@ -11,6 +11,7 @@ for (const [file, html] of pages) {
   assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1, `${file}: expected one h1`);
   assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1, `${file}: expected one current navigation link`);
   assert(html.includes(`href="${file}" aria-current="page"`), `${file}: incorrect active navigation`);
+  assert.equal(html.split(`href="${config.cv}"`).length - 1, 1, `${file}: CV should appear only once`);
   assert(!html.includes('{{'), `${file}: unresolved template token`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(new Set(ids).size, ids.length, `${file}: duplicate element IDs`);
@@ -28,4 +29,12 @@ for (const [file, html] of pages) {
 const papersPage = pages.get('publications.html');
 assert.equal((papersPage.match(/class="publication"/g) ?? []).length, publications.length, 'Every publication must be included in static HTML');
 for (const pub of publications) assert(papersPage.includes(pub.doi), `Missing DOI: ${pub.doi}`);
-console.log(`Verified ${pages.size} pages, ${links} local links/assets, and ${publications.length} publications.`);
+for (const redirect of config.redirects ?? []) {
+  const target = redirect.target === 'cv' ? config.cv : redirect.target;
+  const html = await readFile(path.join(root, redirect.file), 'utf8');
+  assert(html.includes(`content="0; url=${target}"`), `Incorrect redirect: ${redirect.file}`);
+  const [file, hash] = target.split('#');
+  assert((await stat(path.join(root, file))).isFile(), `Missing redirect destination: ${file}`);
+  if (hash) assert(pages.get(file)?.includes(`id="${hash}"`), `Missing redirect anchor: ${target}`);
+}
+console.log(`Verified ${pages.size} pages, ${links} local links/assets, ${publications.length} publications, and ${(config.redirects ?? []).length} redirects.`);

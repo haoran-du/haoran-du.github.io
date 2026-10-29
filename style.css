@@ -266,6 +266,20 @@ h3 {
   line-height:1.85
 }
 
+.hero-description,
+.background-section p,
+.page-lead,
+.project-detail>div>p,
+.methods-grid p:not(.method-tools),
+.publication-summary,
+.blog-entry p,
+.post-body p {
+  text-align:justify;
+  text-align-last:start;
+  -webkit-hyphens:auto;
+  hyphens:auto
+}
+
 .portrait {
   margin:0;
   align-self:center

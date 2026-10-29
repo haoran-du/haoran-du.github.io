@@ -361,6 +361,7 @@ h3 {
 .footer-bottom {
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:16px;
   padding-block:14px;
   color:var(--muted);
@@ -372,8 +373,8 @@ h3 {
 }
 
 .footer-qr img {
-  width:72px;
-  height:72px;
+  width:60px;
+  height:60px;
   background:var(--white);
 }
 

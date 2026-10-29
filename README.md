@@ -16,13 +16,13 @@ The navigation is Home, Research, Publications, Blog, Contact, and CV. The CV me
 
 ## Content preservation
 
-The simplification was checked against `assets/CV_HaoranDu_20260719.pdf` before removing the About and Teaching tabs:
+The current CV is `assets/CV_HaoranDu_20261029.pdf`; older PDF versions have been removed from the website. The historical audit below describes the July 2026 CV used when simplifying the About and Teaching tabs:
 
 - All five degrees, all four selected awards, and the four listed teaching courses are present in the CV.
 - All five research appointments and supervisor credits remain in the Home background section; the supervisor names are absent from the CV.
 - Project details, figures, methods, all four journal articles and DOI links, and all four conference presentations remain on their dedicated pages. Publication data is unchanged.
 - Email, office address, and all three academic profiles remain on Contact.
-- The CV PDF is unchanged. Existing source differences were not silently reconciled: the old website gives Chongqing research dates as 2017–2018, while the CV gives January 2018–April 2019; the website also has a newer publication status than the CV for the Experiments in Fluids paper.
+- That simplification did not edit the CV PDF. At the time, source differences were not silently reconciled: the old website gave Chongqing research dates as 2017–2018, while the July CV gave January 2018–April 2019; the website also had a newer publication status for the Experiments in Fluids paper.
 
 ## Edit and preview
 

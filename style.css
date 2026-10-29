@@ -502,7 +502,7 @@ h3 {
 
 .publication {
   display:grid;
-  grid-template-columns:65px 180px minmax(0,1fr);
+  grid-template-columns:65px 300px minmax(0,1fr);
   gap:30px;
   padding:30px 0;
   border-top:1px solid var(--line);
@@ -510,8 +510,9 @@ h3 {
 }
 
 .publication-image {
-  width:180px;
-  height:145px;
+  width:100%;
+  height:auto;
+  aspect-ratio:4 / 3;
   object-fit:contain;
   padding:8px;
   background:white;
@@ -685,13 +686,8 @@ address strong {
   }
 
   .publication {
-    grid-template-columns:55px 145px minmax(0,1fr);
+    grid-template-columns:50px 240px minmax(0,1fr);
     gap:20px
-  }
-
-  .publication-image {
-    width:145px;
-    height:130px
   }
 
   .contact-layout {
@@ -876,12 +872,12 @@ address strong {
   }
 
   .publication {
-    grid-template-columns:45px minmax(0,1fr);
-    gap:15px
+    grid-template-columns:1fr;
+    gap:16px
   }
 
   .publication-image {
-    display:none
+    max-width:360px
   }
 
   .publication h3 {
@@ -960,11 +956,6 @@ address strong {
 
   .page-heading h1 {
     font-size:2.7rem
-  }
-
-  .publication {
-    grid-template-columns:1fr;
-    gap:8px
   }
 
   .publication .publication-status {

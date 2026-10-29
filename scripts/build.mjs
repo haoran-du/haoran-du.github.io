@@ -18,7 +18,7 @@ const doi = (value = '') => {
 };
 const papers = publications.map((pub) => `<article class="publication" data-year="${escape(pub.year)}">
   <div class="record-date">${escape(pub.year)}${pub.status && pub.status.toLowerCase() !== 'published' ? `<span class="publication-status">${escape(pub.status)}</span>` : ''}</div>
-  ${pub.image ? `<img class="publication-image" src="${escape(pub.image)}" alt="Figure accompanying ${escape(pub.title)}" loading="lazy" width="180" height="145">` : '<div aria-hidden="true"></div>'}
+  ${pub.image ? `<img class="publication-image" src="${escape(pub.image)}" alt="Figure accompanying ${escape(pub.title)}" loading="lazy" width="300" height="225">` : '<div aria-hidden="true"></div>'}
   <div><h3>${escape(pub.title)}</h3><p>${escape(pub.authors)}</p><p class="venue">${escape(pub.venue)}</p>${pub.summary ? `<p class="publication-summary">${escape(pub.summary)}</p>` : ''}${pub.doi ? `<a class="doi" href="${escape(doi(pub.doi))}">DOI: ${escape(pub.doi.replace(/^https?:\/\/doi\.org\//i, '').replace(/^doi:\s*/i, ''))} <span aria-hidden="true">↗</span></a>` : ''}${pub.note ? `<p>${escape(pub.note)}</p>` : ''}</div>
 </article>`).join('\n');
 let stale = false;

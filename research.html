@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Haoran Du</title>
+  <meta name="description" content="Wind-tunnel experiments, large-eddy simulations, and sensor-informed models of urban canopy flow and wind turbine wakes.">
+  <meta name="theme-color" content="#173e52">
+  <link rel="canonical" href="https://haoran-du.github.io/research.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research | Haoran Du">
+  <meta property="og:description" content="Wind-tunnel experiments, large-eddy simulations, and sensor-informed models of urban canopy flow and wind turbine wakes.">
+  <meta property="og:url" content="https://haoran-du.github.io/research.html">
+  <meta property="og:image" content="https://haoran-du.github.io/assets/images/profile-placeholder.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body data-page="research">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container masthead">
+      <a class="brand" href="index.html">Haoran Du<span>Environmental fluid mechanics</span></a>
+      <p class="institution">Western University<span>London, Ontario, Canada</span></p>
+    </div>
+    <div class="navigation-wrap">
+      <div class="container navigation-inner">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">☰</span></button>
+        <nav class="site-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="research.html" aria-current="page">Research</a>
+<a href="publications.html">Publications</a>
+<a href="teaching.html">Teaching</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a></nav>
+        <a class="nav-cv" href="assets/CV_HaoranDu_20260719.pdf">Curriculum vitae <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1"><div class="container page-heading"><p class="eyebrow">Research</p><h1>Flow physics, informed by data.</h1><p class="page-lead">Understanding atmospheric turbulence through wind-tunnel experiments, numerical simulations, and reduced-order modelling.</p><nav class="page-index" aria-label="On this page"><a href="#urban-flows">Urban flows</a><a href="#wind-energy">Wind energy</a><a href="#methods">Methods</a></nav></div>
+<div class="container">
+  <section class="research-project" id="urban-flows" aria-labelledby="urban-heading"><div class="project-heading"><p class="eyebrow">01 / Ongoing research</p><h2 id="urban-heading">Urban canopy flows</h2><p class="project-subtitle">Isothermal street canyon flow under tall building influence</p></div><div class="project-detail"><figure class="research-figure"><img src="assets/images/LESmodel.png" width="1330" height="903" alt="Large-eddy simulation domain showing a street canyon, an upstream tall building, and drag-porosity zones" loading="lazy"><figcaption>Computational domain for the idealised urban canopy and upstream tall building.</figcaption></figure><div><p>How do tall buildings change the interaction between the atmospheric boundary layer and the streets below? This project investigates the influence of building height on turbulence and pollutant dispersion.</p><ul class="detail-list"><li>Precursor LES of a rough-wall atmospheric boundary layer using a drag-porosity canopy.</li><li>Successor LES of an idealised street canyon with a tall upstream building, driven by precursor inflow.</li><li>Building-height sensitivity on a 50-million-cell mesh, using 128–256 cores.</li><li>Passive-scalar tracer released at the canyon floor to study dispersion.</li><li>Validation against wind-tunnel Particle Image Velocimetry (PIV).</li></ul><a class="text-link" href="publications.html">Related publications <span aria-hidden="true">→</span></a></div></div></section>
+  <section class="research-project" id="wind-energy" aria-labelledby="wind-heading"><div class="project-heading"><p class="eyebrow">02 / Ongoing research</p><h2 id="wind-heading">Floating offshore wind</h2><p class="project-subtitle">Wake dynamics and reconstruction</p></div><div class="project-detail"><figure class="research-figure"><img src="assets/images/windturbinewake.png" width="800" height="486" alt="Visualisation of vortical structures in a simulated wind turbine wake" loading="lazy"><figcaption>Resolved wake structures downstream of a wind turbine.</figcaption></figure><div><p>This project combines large-eddy simulation with sensor-informed reconstruction to study the wakes of moving offshore wind turbines.</p><ul class="detail-list"><li>LES of wind turbine wakes using an actuator-line model with multiple degrees of freedom.</li><li>1:75-scale DTU 10 MW model of the NETTUNO wind-tunnel tests.</li><li>Moving tower and nacelle represented by volume penalisation, without re-meshing.</li><li>Wake resolved to six rotor diameters on a 32-million-cell mesh and validated against measurements.</li><li>Plane-to-volume wake reconstruction from a single measured plane.</li></ul></div></div></section>
+  <section class="section methods-section" id="methods" aria-labelledby="methods-heading"><div class="section-heading"><div><p class="eyebrow">Research approach</p><h2 id="methods-heading">Experiments, simulations, models.</h2></div></div><div class="methods-grid">
+    <article><span class="item-index">01 / Measure</span><h3>Wind-tunnel experiments</h3><p>Experiments conducted in collaboration with LHEEA, École Centrale de Nantes, using models typically built at 1:200 scale. The generated boundary layer agrees well with ESDU guidelines.</p><p class="method-tools">Particle Image Velocimetry (PIV)<br>Hot-Wire Anemometry (HWA)</p></article>
+    <article><span class="item-index">02 / Simulate</span><h3>Numerical simulations</h3><p>OpenFOAM-based large-eddy simulations of turbulent flow, convective heat transfer, and passive scalar transport, primarily using <em>pimpleFoam</em> and <em>buoyantPimpleFoam</em>.</p><p class="method-tools">Large-Eddy Simulation (LES)<br>Custom discrete phase model solvers</p></article>
+    <article><span class="item-index">03 / Reconstruct</span><h3>Reduced-order modelling</h3><p>Sensor-informed models for flow reconstruction and prediction, connecting sparse measurements with the large-scale structure of turbulent flows.</p><p class="method-tools">SPOD · Linear Stochastic Estimation<br>Autoencoders · Convolutional Neural Networks</p></article>
+  </div></section>
+</div>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div><a class="footer-name" href="index.html">Haoran Du</a><p>Department of Mechanical and Materials Engineering<br>Western University · London, Ontario, Canada</p></div>
+      <div class="footer-links"><a href="mailto:hdu59@uwo.ca">Email</a><a href="https://scholar.google.com/citations?user=bk8hGcMAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a><a href="https://github.com/haoran-du">GitHub <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="container footer-bottom"><p>© <span id="year">2026</span> Haoran Du</p><p>Hosted on GitHub Pages</p></div>
+  </footer>
+</body>
+</html>

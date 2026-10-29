@@ -375,7 +375,7 @@ h3 {
 .footer-qr img {
   width:60px;
   height:60px;
-  background:var(--white);
+  mix-blend-mode:multiply;
 }
 
 .footer-bottom p {

@@ -9,9 +9,10 @@ A responsive, multi-page academic website for GitHub Pages. Each tab has its own
 | `index.html` | Brief introduction, research interests, and research background |
 | `research.html` | Research projects, figures, and methods |
 | `publications.html` | Chronological journal articles and conference presentations |
+| `blog.html` | Research notes, tutorials, and future teaching materials |
 | `contact.html` | Email, office, and academic profiles |
 
-The navigation is Home, Research, Publications, Contact, and CV. The CV menu item opens the existing PDF. Old `about.html` links redirect to the background section on Home; `teaching.html` redirects to the CV. Redirects are configured alongside pages in `site/config.json`.
+The navigation is Home, Research, Publications, Blog, Contact, and CV. The CV menu item opens the existing PDF. Old `about.html` links redirect to the background section on Home; `teaching.html` redirects to the CV. Redirects are configured alongside pages in `site/config.json`.
 
 ## Content preservation
 
@@ -44,6 +45,26 @@ Open `http://127.0.0.1:4173`. Stop the preview with Ctrl+C.
 - Run `npm run build` after editing templates, configuration, or publication data. The root HTML files are generated; do not edit them directly.
 
 `npm run check` verifies generated pages are current, local links/assets and section anchors resolve, navigation highlights the correct page, all publications are present in static HTML, the CV appears once per page, and legacy redirects resolve. The complete list is served as static HTML without filtering or a runtime data fetch. Old homepage links such as `/#research` and `/#outputs` redirect to their corresponding pages when JavaScript is enabled.
+
+## Publish a blog post or course resource
+
+The Blog starts with an empty list; no sample articles or courses are published. Each post gets its own page and shares the site's navigation, footer, and typography.
+
+1. Write the article body in `site/posts/<slug>.html`. Use paragraphs, `h2`/`h3` headings, figures, lists, and code blocks as needed. The template supplies the `h1`, date, summary, and category. Store figures or downloadable course materials under `assets/`; link to them as `assets/...` because generated articles live at the site root.
+2. Add a record to `site/posts.json`, using the actual publication date. For example:
+
+   ```json
+   {
+     "slug": "boundary-layer-notes",
+     "title": "Boundary-layer notes",
+     "date": "2026-10-29",
+     "category": "Course material",
+     "summary": "A short introduction to the topic covered in this post."
+   }
+   ```
+
+3. Run `npm run build` and `npm run check`, then preview. The example produces `blog-boundary-layer-notes.html` and a link on `blog.html`. Posts appear newest first; category labels can be `Research note`, `Tutorial`, `Course material`, or another descriptive label.
+4. Commit the content, metadata, and generated pages together. Every entry is included in the build; there is no draft or scheduling mode. To retire a post, remove its metadata and generated HTML together, then rebuild.
 
 ## GitHub Pages
 

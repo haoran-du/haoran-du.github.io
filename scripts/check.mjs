@@ -5,12 +5,16 @@ import path from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const config = JSON.parse(await readFile(path.join(root, 'site/config.json'), 'utf8'));
 const publications = JSON.parse(await readFile(path.join(root, 'publications.json'), 'utf8'));
-const pages = new Map(await Promise.all(config.pages.map(async (page) => [page.file, await readFile(path.join(root, page.file), 'utf8')])));
+const posts = JSON.parse(await readFile(path.join(root, 'site/posts.json'), 'utf8'));
+const pageRecords = [...config.pages, ...posts.map((post) => ({ id: 'blog', file: `blog-${post.slug}.html` }))];
+const pages = new Map(await Promise.all(pageRecords.map(async (page) => [page.file, await readFile(path.join(root, page.file), 'utf8')])));
 let links = 0;
 for (const [file, html] of pages) {
   assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1, `${file}: expected one h1`);
   assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1, `${file}: expected one current navigation link`);
-  assert(html.includes(`href="${file}" aria-current="page"`), `${file}: incorrect active navigation`);
+  const activeId = pageRecords.find((page) => page.file === file).id;
+  const activeFile = config.pages.find((page) => page.id === activeId).file;
+  assert(html.includes(`href="${activeFile}" aria-current="page"`), `${file}: incorrect active navigation`);
   assert.equal(html.split(`href="${config.cv}"`).length - 1, 1, `${file}: CV should appear only once`);
   assert(!html.includes('{{'), `${file}: unresolved template token`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
@@ -29,6 +33,9 @@ for (const [file, html] of pages) {
 const papersPage = pages.get('publications.html');
 assert.equal((papersPage.match(/class="publication"/g) ?? []).length, publications.length, 'Every publication must be included in static HTML');
 for (const pub of publications) assert(papersPage.includes(pub.doi), `Missing DOI: ${pub.doi}`);
+const blogPage = pages.get('blog.html');
+assert.equal((blogPage.match(/class="blog-entry"/g) ?? []).length, posts.length, 'Every blog post must appear in the static listing');
+for (const post of posts) assert(blogPage.includes(`href="blog-${post.slug}.html"`), `Missing blog post link: ${post.slug}`);
 for (const redirect of config.redirects ?? []) {
   const target = redirect.target === 'cv' ? config.cv : redirect.target;
   const html = await readFile(path.join(root, redirect.file), 'utf8');
@@ -37,4 +44,4 @@ for (const redirect of config.redirects ?? []) {
   assert((await stat(path.join(root, file))).isFile(), `Missing redirect destination: ${file}`);
   if (hash) assert(pages.get(file)?.includes(`id="${hash}"`), `Missing redirect anchor: ${target}`);
 }
-console.log(`Verified ${pages.size} pages, ${links} local links/assets, ${publications.length} publications, and ${(config.redirects ?? []).length} redirects.`);
+console.log(`Verified ${pages.size} pages, ${links} local links/assets, ${publications.length} publications, ${posts.length} blog posts, and ${(config.redirects ?? []).length} redirects.`);

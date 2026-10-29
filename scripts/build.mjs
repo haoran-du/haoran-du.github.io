@@ -7,6 +7,17 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const read = (file) => readFile(path.join(root, file), 'utf8');
 const config = JSON.parse(await read('site/config.json'));
 const publications = JSON.parse(await read('publications.json')).sort((a, b) => b.year - a.year);
+const posts = JSON.parse(await read('site/posts.json'));
+if (!Array.isArray(posts)) throw new Error('site/posts.json must contain an array');
+const slugs = new Set();
+for (const post of posts) {
+  if (!/^[a-z][a-z0-9-]*$/.test(post.slug) || slugs.has(post.slug)) throw new Error(`Invalid or duplicate post slug: ${post.slug}`);
+  if (!post.title?.trim() || !post.summary?.trim()) throw new Error(`Missing title or summary for post: ${post.slug}`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(post.date) || new Date(`${post.date}T00:00:00Z`).toISOString().slice(0, 10) !== post.date) throw new Error(`Invalid post date: ${post.slug}`);
+  slugs.add(post.slug);
+}
+posts.sort((a, b) => b.date.localeCompare(a.date));
+const dateLabel = (date) => new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
 const layout = await read('site/layout.html');
 // Change asset URLs when their content changes so cached Pages styles stay current.
 const assetUrl = async (file) => `${file}?v=${createHash('sha256').update((await read(file)).replace(/\r\n/g, '\n')).digest('hex').slice(0, 12)}`;
@@ -21,6 +32,10 @@ const papers = publications.map((pub) => `<article class="publication" data-year
   ${pub.image ? `<img class="publication-image" src="${escape(pub.image)}" alt="Figure accompanying ${escape(pub.title)}" loading="lazy" width="300" height="225">` : '<div aria-hidden="true"></div>'}
   <div><h3>${escape(pub.title)}</h3><p>${escape(pub.authors)}</p><p class="venue">${escape(pub.venue)}</p>${pub.summary ? `<p class="publication-summary">${escape(pub.summary)}</p>` : ''}${pub.doi ? `<a class="doi" href="${escape(doi(pub.doi))}">DOI: ${escape(pub.doi.replace(/^https?:\/\/doi\.org\//i, '').replace(/^doi:\s*/i, ''))} <span aria-hidden="true">↗</span></a>` : ''}${pub.note ? `<p>${escape(pub.note)}</p>` : ''}</div>
 </article>`).join('\n');
+const postList = posts.length ? posts.map((post) => `<article class="blog-entry">
+  <div class="post-meta"><span>${escape(post.category || 'Note')}</span><time datetime="${escape(post.date)}">${dateLabel(post.date)}</time></div>
+  <div><h3><a href="blog-${escape(post.slug)}.html">${escape(post.title)}</a></h3><p>${escape(post.summary)}</p></div>
+</article>`).join('\n') : '<p class="blog-empty">No posts published yet. Research notes and course materials will appear here as they become available.</p>';
 let stale = false;
 const files = new Set();
 const ids = new Set();
@@ -36,24 +51,41 @@ async function output(file, html) {
     console.log(`Built ${file}`);
   }
 }
-for (const page of config.pages) {
+async function buildPage(page, content, extra = {}) {
   if (!/^[a-z][a-z0-9-]*\.html$/.test(page.file) || !/^[a-z][a-z0-9-]*$/.test(page.id)) throw new Error(`Invalid page path: ${page.file}`);
-  if (files.has(page.file) || ids.has(page.id)) throw new Error(`Duplicate page: ${page.id}`);
-  files.add(page.file); ids.add(page.id);
+  if (files.has(page.file)) throw new Error(`Duplicate page file: ${page.file}`);
+  files.add(page.file);
   const tokens = {
     ...assets,
     ...Object.fromEntries(Object.entries(config).filter(([, value]) => typeof value === 'string').map(([key, value]) => [`site.${key}`, escape(value)])),
     ...Object.fromEntries(Object.entries(page).map(([key, value]) => [`page.${key}`, escape(value)])),
     'page.canonical': escape(`${config.url.replace(/\/$/, '')}/${page.file === 'index.html' ? '' : page.file}`),
     navigation: config.pages.map((item) => `<a href="${escape(item.file)}"${item.id === page.id ? ' aria-current="page"' : ''}>${escape(item.label)}</a>`).join('\n'),
-    publications: papers
+    publications: papers,
+    posts: postList,
+    ...extra
   };
   const render = (template) => template.replace(/\{\{([\w.-]+)\}\}/g, (_, key) => {
     if (!(key in tokens)) throw new Error(`Unknown template value: ${key}`);
     return tokens[key];
   });
-  tokens.content = render(await read(`site/pages/${page.id}.html`));
+  tokens.content = render(content);
   await output(page.file, `${render(layout).trim()}\n`);
+}
+for (const page of config.pages) {
+  if (ids.has(page.id)) throw new Error(`Duplicate page: ${page.id}`);
+  ids.add(page.id);
+  await buildPage(page, await read(`site/pages/${page.id}.html`));
+}
+for (const post of posts) {
+  await buildPage({ id: 'blog', file: `blog-${post.slug}.html`, title: `${post.title} | ${config.name}`, description: post.summary }, await read('site/post.html'), {
+    'post.title': escape(post.title),
+    'post.summary': escape(post.summary),
+    'post.category': escape(post.category || 'Note'),
+    'post.date': escape(post.date),
+    'post.dateLabel': dateLabel(post.date),
+    'post.content': await read(`site/posts/${post.slug}.html`)
+  });
 }
 // Keep existing bookmarks useful after a page is consolidated.
 for (const redirect of config.redirects ?? []) {
@@ -76,4 +108,4 @@ for (const redirect of config.redirects ?? []) {
 `);
 }
 if (stale) process.exitCode = 1;
-else if (process.argv.includes('--check')) console.log(`All ${config.pages.length} pages and ${(config.redirects ?? []).length} redirects are up to date.`);
+else if (process.argv.includes('--check')) console.log(`All ${config.pages.length} pages, ${posts.length} blog posts, and ${(config.redirects ?? []).length} redirects are up to date.`);

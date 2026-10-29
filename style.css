@@ -4,6 +4,7 @@
   --ink:#20313a;
   --muted:#5e6c72;
   --accent:#173e52;
+  --masthead:#234e56;
   --line:#d9dfdf;
   --wash:#edf1ef;
   --max:1160px
@@ -139,8 +140,8 @@ h3 {
 }
 
 .site-header {
-  background:var(--paper);
-  border-top:4px solid var(--accent)
+  background:var(--masthead);
+  border-top:4px solid #80a9a3
 }
 
 .masthead {
@@ -153,7 +154,7 @@ h3 {
 
 .brand {
   text-decoration:none;
-  color:var(--ink);
+  color:var(--paper);
   font-size:1.9rem;
   letter-spacing:-.04em
 }
@@ -165,13 +166,18 @@ h3 {
 .brand span {
   display:block;
   font:400 .73rem/1.5 "Segoe UI",Arial,sans-serif;
-  color:var(--muted);
+  color:#d5e5e4;
   letter-spacing:.035em;
   margin-top:6px
 }
 
 .navigation-wrap {
+  background:var(--paper);
   border-block:1px solid var(--line)
+}
+
+.masthead :focus-visible {
+  outline-color:#c8e5df
 }
 
 .navigation-inner {
@@ -264,6 +270,9 @@ h3 {
   width:100%;
   aspect-ratio:1;
   object-fit:cover;
+  border-radius:50%;
+  border:5px solid var(--paper);
+  box-shadow:0 0 0 1px #c4d7d3;
   filter:saturate(.8)
 }
 
@@ -272,6 +281,7 @@ h3 {
   font-size:.68rem;
   color:var(--muted);
   line-height:1.7;
+  text-align:center;
 }
 
 .research-band {
@@ -573,6 +583,94 @@ h3 {
 
 .presentations {
   border-top:1px solid var(--line)
+}
+
+.blog-section {
+  padding-bottom:70px
+}
+
+.blog-empty {
+  border-top:1px solid var(--line);
+  padding-top:28px;
+  color:var(--muted);
+  font-size:.95rem
+}
+
+.blog-entry {
+  display:grid;
+  grid-template-columns:180px minmax(0,760px);
+  gap:30px;
+  padding:30px 0;
+  border-top:1px solid var(--line)
+}
+
+.post-meta {
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.8
+}
+
+.blog-entry .post-meta span {
+  display:block;
+  color:var(--accent)
+}
+
+.blog-entry h3 {
+  font-size:1.5rem;
+  line-height:1.35
+}
+
+.blog-entry h3 a {
+  text-decoration:none
+}
+
+.blog-entry h3 a:hover {
+  text-decoration:underline
+}
+
+.blog-entry p:last-child {
+  color:var(--muted);
+  margin-bottom:0
+}
+
+.blog-post {
+  max-width:800px;
+  padding-bottom:70px
+}
+
+.post-back {
+  display:inline-block;
+  margin-bottom:28px;
+  font-size:.85rem
+}
+
+.post-body {
+  line-height:1.85;
+  overflow-wrap:anywhere
+}
+
+.post-body h2,.post-body h3 {
+  margin-top:1.6em
+}
+
+.post-body figure {
+  margin:30px 0
+}
+
+.post-body figcaption {
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.85rem
+}
+
+.post-body pre {
+  padding:20px;
+  background:var(--wash);
+  overflow-x:auto
+}
+
+.post-body code {
+  font-size:.9em
 }
 
 .record {
@@ -884,6 +982,16 @@ address strong {
     font-size:1.2rem
   }
 
+  .blog-entry {
+    grid-template-columns:1fr;
+    gap:8px
+  }
+
+  .blog-entry .post-meta span {
+    display:inline;
+    margin-right:12px
+  }
+
   .record {
     grid-template-columns:75px minmax(0,1fr);
     gap:20px
@@ -928,7 +1036,8 @@ address strong {
     border-top:0;
     margin:0;
     padding:0;
-    font-size:.74rem
+    font-size:.74rem;
+    text-align:left
   }
 
   .hero-description {

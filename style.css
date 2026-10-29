@@ -238,6 +238,11 @@ h3 {
   padding-block:70px 64px
 }
 
+.hero-copy {
+  min-width:0;
+  overflow-wrap:anywhere
+}
+
 .home-hero h1 {
   font-size:clamp(3rem,5.7vw,4.8rem);
   line-height:1.06;
@@ -857,7 +862,7 @@ address strong {
   }
 
   .home-hero h1 {
-    font-size:3.1rem
+    font-size:clamp(2.4rem,6.8vw,3.1rem)
   }
 
   .hero-intro {
@@ -1016,12 +1021,12 @@ address strong {
 
 @media(max-width:520px) {
   .home-hero {
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr);
     gap:30px
   }
 
   .home-hero h1 {
-    font-size:3.4rem
+    font-size:clamp(2rem,12vw,3.4rem)
   }
 
   .portrait {

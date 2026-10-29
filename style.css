@@ -359,9 +359,22 @@ h3 {
 }
 
 .footer-bottom {
-  padding-block:20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding-block:14px;
   color:var(--muted);
   font-size:.72rem;
+}
+
+.footer-qr {
+  flex-shrink:0;
+}
+
+.footer-qr img {
+  width:72px;
+  height:72px;
+  background:var(--white);
 }
 
 .footer-bottom p {

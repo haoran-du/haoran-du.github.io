@@ -1,12 +1,13 @@
 :root {
-  --paper:#fafaf7;
+  --paper:#f6f5f2;
   --white:#fff;
-  --ink:#20313a;
-  --muted:#5e6c72;
-  --accent:#173e52;
-  --masthead:#234e56;
-  --line:#d9dfdf;
-  --wash:#edf1ef;
+  --ink:#263448;
+  --muted:#5f6b7b;
+  --accent:#405f87;
+  --masthead:#e8edf5;
+  --line:#e0e5ec;
+  --wash:#eef2f7;
+  --card-shadow:0 5px 22px rgba(38,52,72,.045);
   --max:1160px
 }
 
@@ -141,7 +142,7 @@ h3 {
 
 .site-header {
   background:var(--masthead);
-  border-top:4px solid #80a9a3
+  border-top:4px solid #9aacc6
 }
 
 .masthead {
@@ -154,7 +155,7 @@ h3 {
 
 .brand {
   text-decoration:none;
-  color:var(--paper);
+  color:var(--ink);
   font-size:1.9rem;
   letter-spacing:-.04em
 }
@@ -166,18 +167,18 @@ h3 {
 .brand span {
   display:block;
   font:400 .73rem/1.5 "Segoe UI",Arial,sans-serif;
-  color:#d5e5e4;
+  color:var(--muted);
   letter-spacing:.035em;
   margin-top:6px
 }
 
 .navigation-wrap {
-  background:var(--paper);
+  background:rgba(255,255,255,.7);
   border-block:1px solid var(--line)
 }
 
 .masthead :focus-visible {
-  outline-color:#c8e5df
+  outline-color:var(--accent)
 }
 
 .navigation-inner {
@@ -189,13 +190,14 @@ h3 {
 
 .site-nav {
   display:flex;
-  gap:31px
+  gap:8px;
+  padding-block:10px
 }
 
 .site-nav a {
   display:block;
-  padding:16px 0 13px;
-  border-bottom:3px solid transparent;
+  padding:8px 14px;
+  border-radius:9px;
   color:var(--muted);
   text-decoration:none;
   font-size:.85rem;
@@ -204,11 +206,11 @@ h3 {
 
 .site-nav a:hover {
   color:var(--accent);
-  border-color:#a4b4bb
+  background:var(--wash)
 }
 
 .site-nav a[aria-current="page"] {
-  border-color:var(--accent);
+  background:#e7edf6;
   color:var(--accent);
   font-weight:600
 }
@@ -233,9 +235,34 @@ h3 {
 .home-hero {
   display:grid;
   grid-template-columns:minmax(0,1fr) 274px;
-  gap:100px;
+  gap:64px;
   align-items:center;
-  padding-block:70px 64px
+  padding:48px;
+  margin-block:32px
+}
+
+.home-hero,
+.interest-grid>a,
+.background-section,
+.research-project,
+.methods-grid article,
+.publication,
+.record,
+.blog-empty,
+.blog-entry,
+.contact-layout>section {
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--card-shadow)
+}
+
+.home-hero {
+  border-radius:24px
+}
+
+.home-hero>*,.interest-grid>a>div,.project-detail>*,.publication>*,.record>*,.contact-layout>* {
+  min-width:0
 }
 
 .hero-copy {
@@ -291,7 +318,7 @@ h3 {
   object-fit:cover;
   border-radius:50%;
   border:5px solid var(--paper);
-  box-shadow:0 0 0 1px #c4d7d3;
+  box-shadow:0 0 0 1px #ccd7e5;
   filter:saturate(.8)
 }
 
@@ -304,9 +331,7 @@ h3 {
 }
 
 .research-band {
-  background:var(--wash);
-  border-block:1px solid var(--line);
-  padding:25px 0 30px
+  padding:8px 0 32px
 }
 
 .research-band .eyebrow {
@@ -317,20 +342,23 @@ h3 {
 .interest-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:26px
+  gap:20px
 }
 
 .interest-grid>a {
   display:flex;
   align-items:flex-start;
-  gap:17px;
+  gap:12px;
+  padding:24px 20px;
   text-decoration:none;
-  color:var(--ink)
+  color:var(--ink);
+  transition:border-color .18s,box-shadow .18s,transform .18s
 }
 
-.interest-grid>a+a {
-  border-left:1px solid #ccd5d5;
-  padding-left:26px
+.interest-grid>a:hover {
+  border-color:#a9bad2;
+  box-shadow:0 9px 26px rgba(38,52,72,.08);
+  transform:translateY(-2px)
 }
 
 .interest-grid>a>span:last-child {
@@ -441,8 +469,8 @@ h3 {
 }
 
 .research-project {
-  padding-block:42px 52px;
-  border-top:1px solid var(--line)
+  padding:32px;
+  margin-bottom:24px
 }
 
 .project-heading .eyebrow {
@@ -473,7 +501,8 @@ h3 {
   width:100%;
   border:1px solid var(--line);
   background:var(--white);
-  padding:16px
+  padding:16px;
+  border-radius:12px
 }
 
 .research-figure figcaption {
@@ -499,13 +528,17 @@ h3 {
 }
 
 .methods-section {
-  border-top:1px solid var(--line)
+  padding-top:28px
 }
 
 .methods-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:40px
+  gap:22px
+}
+
+.methods-grid article {
+  padding:26px
 }
 
 .methods-grid h3 {
@@ -533,8 +566,8 @@ h3 {
   display:grid;
   grid-template-columns:65px 300px minmax(0,1fr);
   gap:30px;
-  padding:30px 0;
-  border-top:1px solid var(--line);
+  padding:28px;
+  margin-top:22px;
   align-items:start
 }
 
@@ -545,7 +578,8 @@ h3 {
   object-fit:contain;
   padding:8px;
   background:white;
-  border:1px solid var(--line)
+  border:1px solid var(--line);
+  border-radius:12px
 }
 
 .publication h3 {
@@ -601,7 +635,13 @@ h3 {
 }
 
 .presentations {
-  border-top:1px solid var(--line)
+  padding-top:40px
+}
+
+.record-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px
 }
 
 .blog-section {
@@ -609,8 +649,7 @@ h3 {
 }
 
 .blog-empty {
-  border-top:1px solid var(--line);
-  padding-top:28px;
+  padding:32px;
   color:var(--muted);
   font-size:.95rem
 }
@@ -619,8 +658,8 @@ h3 {
   display:grid;
   grid-template-columns:180px minmax(0,760px);
   gap:30px;
-  padding:30px 0;
-  border-top:1px solid var(--line)
+  padding:30px;
+  margin-bottom:22px
 }
 
 .post-meta {
@@ -694,10 +733,9 @@ h3 {
 
 .record {
   display:grid;
-  grid-template-columns:145px minmax(0,1fr);
+  grid-template-columns:55px minmax(0,1fr);
   gap:22px;
-  padding:23px 0;
-  border-top:1px solid var(--line)
+  padding:24px
 }
 
 .record h3 {
@@ -714,10 +752,14 @@ h3 {
 
 .contact-layout {
   display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:100px;
+  grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+  gap:24px;
   padding-block:8px 70px;
   min-height:415px
+}
+
+.contact-layout>section {
+  padding:32px
 }
 
 .email-link {
@@ -748,11 +790,6 @@ address strong {
   color:var(--ink)
 }
 
-.profiles-section {
-  border-left:1px solid var(--line);
-  padding-left:48px
-}
-
 .profile-link {
   display:flex;
   justify-content:space-between;
@@ -770,12 +807,13 @@ address strong {
 
 @media(max-width:1050px) {
   .home-hero {
-    gap:50px;
-    grid-template-columns:minmax(0,1fr) 235px
+    padding:32px;
+    gap:40px;
+    grid-template-columns:minmax(0,1fr) 210px
   }
 
   .site-nav {
-    gap:24px
+    gap:6px
   }
 
   .interest-grid {
@@ -784,10 +822,6 @@ address strong {
 
   .interest-grid>a {
     gap:10px
-  }
-
-  .interest-grid>a+a {
-    padding-left:18px
   }
 
   .interest-grid h3 {
@@ -808,7 +842,7 @@ address strong {
   }
 
   .contact-layout {
-    gap:50px
+    gap:24px
   }
 }
 
@@ -847,12 +881,12 @@ address strong {
   .site-nav {
     width:100%;
     flex-wrap:wrap;
-    gap:0 25px;
+    gap:8px;
     order:3
   }
 
   .site-nav a {
-    padding-block:13px;
+    padding:10px 12px;
     font-size:.83rem
   }
 
@@ -865,13 +899,13 @@ address strong {
   }
 
   .nav-enhanced .site-nav a {
-    width:calc(50% - 13px)
+    width:calc(50% - 4px)
   }
 
   .home-hero {
-    padding-block:42px;
-    grid-template-columns:minmax(0,1fr) 180px;
-    gap:28px;
+    padding:28px;
+    grid-template-columns:minmax(0,1fr) 150px;
+    gap:24px;
     align-items:start
   }
 
@@ -901,26 +935,12 @@ address strong {
 
   .interest-grid {
     grid-template-columns:1fr;
-    gap:0
+    gap:14px
   }
 
   .interest-grid>a {
-    padding:17px 0;
+    padding:22px;
     gap:15px
-  }
-
-  .interest-grid>a:first-child {
-    padding-top:0
-  }
-
-  .interest-grid>a:last-child {
-    padding-bottom:0
-  }
-
-  .interest-grid>a+a {
-    border-left:0;
-    border-top:1px solid var(--line);
-    padding-left:0
   }
 
   .interest-grid .item-index {
@@ -932,7 +952,7 @@ address strong {
   }
 
   .research-band {
-    padding-block:23px
+    padding-block:0 24px
   }
 
   .section {
@@ -966,7 +986,7 @@ address strong {
   }
 
   .research-project {
-    padding-block:30px 38px
+    padding:24px
   }
 
   .research-figure img {
@@ -980,8 +1000,7 @@ address strong {
   }
 
   .methods-grid article {
-    border-top:1px solid var(--line);
-    padding-top:20px
+    padding:24px
   }
 
   .methods-grid p {
@@ -990,7 +1009,8 @@ address strong {
 
   .publication {
     grid-template-columns:1fr;
-    gap:16px
+    gap:16px;
+    padding:24px
   }
 
   .publication-image {
@@ -1012,20 +1032,18 @@ address strong {
   }
 
   .record {
-    grid-template-columns:75px minmax(0,1fr);
+    grid-template-columns:55px minmax(0,1fr);
     gap:20px
   }
 
   .contact-layout {
     grid-template-columns:1fr;
-    gap:40px;
+    gap:20px;
     padding-bottom:45px
   }
 
-  .profiles-section {
-    border-left:0;
-    border-top:1px solid var(--line);
-    padding:28px 0 0
+  .contact-layout>section {
+    padding:26px
   }
 
   .email-link {
@@ -1033,20 +1051,21 @@ address strong {
   }
 }
 
-@media(max-width:520px) {
+@media(max-width:680px) {
   .home-hero {
     grid-template-columns:minmax(0,1fr);
-    gap:30px
+    gap:28px;
+    padding:24px
   }
 
   .home-hero h1 {
-    font-size:clamp(2rem,12vw,3.4rem)
+    font-size:clamp(1.8rem,10.5vw,3.4rem)
   }
 
   .portrait {
     display:grid;
-    grid-template-columns:115px minmax(0,1fr);
-    gap:20px;
+    grid-template-columns:100px minmax(0,1fr);
+    gap:16px;
     margin:0;
     align-items:center
   }
@@ -1102,6 +1121,14 @@ address strong {
 
   .email-link {
     font-size:1.8rem
+  }
+
+  .record-list {
+    grid-template-columns:1fr
+  }
+
+  .publication,.research-project,.methods-grid article,.blog-entry,.blog-empty,.contact-layout>section {
+    padding:20px
   }
 }
 
@@ -1166,6 +1193,8 @@ main {
   display:grid;
   grid-template-columns:240px minmax(0,1fr);
   gap:45px;
+  padding:32px;
+  margin-bottom:40px;
 }
 
 .background-section p {
@@ -1181,5 +1210,6 @@ main {
   .background-section {
     grid-template-columns:1fr;
     gap:10px;
+    padding:24px;
   }
 }

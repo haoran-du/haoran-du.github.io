@@ -26,6 +26,8 @@ The current CV is `assets/CV_HaoranDu_20261029.pdf`; older PDF versions have bee
 
 ## Edit and preview
 
+The header's Theme selector offers Auto, Light, and Dark. Auto is the default and follows the visitor's device-local time: light from 07:00 (inclusive) to 19:00 (exclusive), dark otherwise. Manual choices persist in local storage and sync across tabs; switching back to Auto resumes the clock. Time is checked every minute and when returning to the page. No location permission or server request is needed. `theme.js` runs before styles to apply the correct palette before first paint. Without JavaScript, the readable light palette remains available. Figure colors and the QR pattern are preserved in both themes.
+
 Use Node.js 20 or later. No package installation is needed.
 
 ```sh

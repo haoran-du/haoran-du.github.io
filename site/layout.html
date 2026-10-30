@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{page.title}}</title>
   <meta name="description" content="{{page.description}}">
-  <meta name="theme-color" content="#e8edf5">
+  <meta name="theme-color" content="#f8f6f2">
+  <script src="{{asset.theme}}"></script>
   <link rel="canonical" href="{{page.canonical}}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{page.title}}">
@@ -21,6 +22,15 @@
   <header class="site-header">
     <div class="container masthead">
       <a class="brand" href="index.html">{{site.name}}<span>{{site.tagline}}</span></a>
+      <div class="theme-switch" hidden>
+        <label for="theme-mode">Theme</label>
+        <select id="theme-mode" aria-describedby="theme-help">
+          <option value="auto">Auto</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <span id="theme-help" class="visually-hidden">Auto uses your local time: light from 7 am to 7 pm, dark overnight.</span>
+      </div>
     </div>
     <div class="navigation-wrap">
       <div class="container navigation-inner">

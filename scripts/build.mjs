@@ -21,7 +21,7 @@ const dateLabel = (date) => new Intl.DateTimeFormat('en-US', { year: 'numeric', 
 const layout = await read('site/layout.html');
 // Change asset URLs when their content changes so cached Pages styles stay current.
 const assetUrl = async (file) => `${file}?v=${createHash('sha256').update((await read(file)).replace(/\r\n/g, '\n')).digest('hex').slice(0, 12)}`;
-const assets = { 'asset.stylesheet': await assetUrl('style.css'), 'asset.script': await assetUrl('scripts.js') };
+const assets = { 'asset.stylesheet': await assetUrl('style.css'), 'asset.script': await assetUrl('scripts.js'), 'asset.theme': await assetUrl('theme.js') };
 const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const doi = (value = '') => {
   const clean = value.trim().replace(/^doi:\s*/i, '').replace(/^https?:\/\/doi\.org\//i, '');

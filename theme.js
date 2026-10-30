@@ -11,7 +11,7 @@
     const theme = mode === 'auto' ? (hour >= 7 && hour < 19 ? 'light' : 'dark') : mode;
     document.documentElement.dataset.theme = theme;
     document.documentElement.dataset.themeMode = mode;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#162a46' : '#f8f6f2');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#384248' : '#efeae2');
     const select = document.getElementById('theme-mode');
     if (select) select.value = mode;
   };

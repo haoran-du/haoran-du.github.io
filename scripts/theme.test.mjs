@@ -59,7 +59,7 @@ test('Manual choices persist across page loads and override time until Auto is s
   assert.equal(page.root.dataset.theme, 'light');
   page.change('auto');
   assert.equal(page.root.dataset.theme, 'dark');
-  assert.equal(page.meta.content, '#162a46');
+  assert.equal(page.meta.content, '#384248');
 });
 
 test('An open page follows the local clock when Auto is active', () => {
@@ -68,7 +68,7 @@ test('An open page follows the local clock when Auto is active', () => {
   assert.equal(page.root.dataset.theme, 'dark');
   page.time(7);
   assert.equal(page.root.dataset.theme, 'light');
-  assert.equal(page.meta.content, '#f8f6f2');
+  assert.equal(page.meta.content, '#efeae2');
 });
 
 test('Invalid or unavailable storage still allows automatic and manual appearance', () => {

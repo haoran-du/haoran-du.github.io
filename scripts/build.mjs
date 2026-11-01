@@ -80,6 +80,7 @@ for (const page of config.pages) {
 for (const post of posts) {
   await buildPage({ id: 'blog', file: `blog-${post.slug}.html`, title: `${post.title} | ${config.name}`, description: post.summary }, await read('site/post.html'), {
     'post.title': escape(post.title),
+    'post.author': escape(post.author || config.name),
     'post.summary': escape(post.summary),
     'post.category': escape(post.category || 'Note'),
     'post.date': escape(post.date),

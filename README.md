@@ -9,7 +9,7 @@ A responsive, multi-page academic website for GitHub Pages. Each tab has its own
 | `index.html` | Brief introduction, research interests, and research background |
 | `research.html` | Research projects, figures, and methods |
 | `publications.html` | Chronological journal articles and conference presentations |
-| `blog.html` | Research notes, tutorials, and future teaching materials |
+| `blog.html` | Conference slides, research notes, tutorials, and teaching materials |
 | `contact.html` | Email, office, and academic profiles |
 
 The navigation is Home, Research, Publications, Blog, Contact, and CV. The CV menu item opens the existing PDF. Old `about.html` links redirect to the background section on Home; `teaching.html` redirects to the CV. Redirects are configured alongside pages in `site/config.json`.
@@ -50,15 +50,18 @@ Open `http://127.0.0.1:4173`. Stop the preview with Ctrl+C.
 
 ## Publish a blog post or course resource
 
-The Blog starts with an empty list; no sample articles or courses are published. Each post gets its own page and shares the site's navigation, footer, and typography.
+The Blog includes slide archives for PHYSMOD 2022, 2024, and 2026 and CFDSC / CSME 2025. Each post gets its own page and shares the site's navigation, footer, and typography. Conference entries on Publications link to these posts. The posts include embedded PDF slides, open/download links, and a note directing readers to peer-reviewed journal articles for final versions of the studies. Each post header displays its title, author, and published date. Conference posts use the presentation date as their published date for citation; the full conference dates appear separately in each post.
 
-1. Write the article body in `site/posts/<slug>.html`. Use paragraphs, `h2`/`h3` headings, figures, lists, and code blocks as needed. The template supplies the `h1`, date, summary, and category. Store figures or downloadable course materials under `assets/`; link to them as `assets/...` because generated articles live at the site root.
-2. Add a record to `site/posts.json`, using the actual publication date. For example:
+Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the supplied slide PDFs; PHYSMOD 2026 uses the supplied V2 PDF. The 2022 slides were exported from the supplied PowerPoint file. Only PDFs are included in the website. Preserve the conference-version note when adding further slide archives, and distinguish related journal papers from a final article covering the same study.
+
+1. Write the article body in `site/posts/<slug>.html`. Use paragraphs, `h2`/`h3` headings, figures, lists, and code blocks as needed. The template supplies the `h1`, author, published date, summary, and category. The optional `author` field defaults to the site owner's name. Store figures or downloadable course materials under `assets/`; link to them as `assets/...` because generated articles live at the site root.
+2. Add a record to `site/posts.json`, using the presentation date for conference posts and the actual publication date for other posts. For example:
 
    ```json
    {
      "slug": "boundary-layer-notes",
      "title": "Boundary-layer notes",
+     "author": "Haoran Du",
      "date": "2026-10-29",
      "category": "Course material",
      "summary": "A short introduction to the topic covered in this post."

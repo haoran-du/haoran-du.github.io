@@ -1,8 +1,9 @@
 <article class="container blog-post">
   <header class="page-heading">
     <a class="post-back" href="blog.html">← All posts</a>
-    <p class="post-meta"><span>{{post.category}}</span> · <time datetime="{{post.date}}">{{post.dateLabel}}</time></p>
+    <p class="post-meta">{{post.category}}</p>
     <h1>{{post.title}}</h1>
+    <p class="post-meta">By {{post.author}} · Published <time datetime="{{post.date}}">{{post.dateLabel}}</time></p>
     <p class="page-lead">{{post.summary}}</p>
   </header>
   <div class="post-body">{{post.content}}</div>

@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "slug": "physmod-2026",
+    "title": "PHYSMOD 2026: Reconstructing large-scale flow from sparse measurements",
+    "author": "Haoran Du",
+    "date": "2026-08-26",
+    "category": "Conference presentation",
+    "summary": "Slides from PHYSMOD 2026 on reconstructing large-scale atmospheric boundary-layer flow from sparse measurements using reduced-order models."
+  },
+  {
+    "slug": "cfdsc-csme-2025",
+    "title": "CFDSC / CSME 2025: Simulating street canyon flow",
+    "author": "Haoran Du",
+    "date": "2025-05-28",
+    "category": "Conference presentation",
+    "summary": "Slides from the 2025 congress on large-eddy simulations of street canyon flow with a drag-porosity modelled atmospheric boundary layer."
+  },
+  {
+    "slug": "physmod-2024",
+    "title": "PHYSMOD 2024: Boundary-layer structures and street canyon flow",
+    "author": "Haoran Du",
+    "date": "2024-08-29",
+    "category": "Conference presentation",
+    "summary": "Slides from PHYSMOD 2024 on reconstructing large-scale boundary-layer structures and examining their relationship with street canyon flow."
+  },
+  {
+    "slug": "physmod-2022",
+    "title": "PHYSMOD 2022: An upstream tall building and street canyon flow",
+    "author": "Haoran Du",
+    "date": "2022-08-29",
+    "category": "Conference presentation",
+    "summary": "Slides from PHYSMOD 2022 on wind-tunnel measurements of how an upstream tall building affects turbulence in a street canyon."
+  }
+]

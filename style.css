@@ -813,6 +813,33 @@ h3 {
   font-size:.9em
 }
 
+.presentation-note {
+  padding:20px 24px;
+  margin-block:24px;
+  border-left:3px solid var(--accent);
+  background:var(--wash);
+  border-radius:0 12px 12px 0
+}
+
+.presentation-note p {
+  margin:0
+}
+
+.slides-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 24px
+}
+
+.slides-viewer {
+  display:block;
+  width:100%;
+  height:clamp(360px,65vh,640px);
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--white)
+}
+
 .record {
   display:grid;
   grid-template-columns:55px minmax(0,1fr);

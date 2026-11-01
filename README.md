@@ -9,7 +9,7 @@ A responsive, multi-page academic website for GitHub Pages. Each tab has its own
 | `index.html` | Brief introduction, research interests, and research background |
 | `research.html` | Research projects, figures, and methods |
 | `publications.html` | Chronological journal articles and conference presentations |
-| `blog.html` | Conference slides, research notes, tutorials, and teaching materials |
+| `blog.html` | Presentation slides, research notes, tutorials, and teaching materials |
 | `contact.html` | Email, office, and academic profiles |
 
 The navigation is Home, Research, Publications, Blog, Contact, and CV. The CV menu item opens the existing PDF. Old `about.html` links redirect to the background section on Home; `teaching.html` redirects to the CV. Redirects are configured alongside pages in `site/config.json`.
@@ -46,16 +46,16 @@ Open `http://127.0.0.1:4173`. Stop the preview with Ctrl+C.
 - Add figures and CVs under `assets/`.
 - Run `npm run build` after editing templates, configuration, or publication data. The root HTML files are generated; do not edit them directly.
 
-`npm run check` verifies generated pages are current, local links/assets and section anchors resolve, navigation highlights the correct page, all publications are present in static HTML, the CV appears once per page, and legacy redirects resolve. The complete lists are served as static HTML without a runtime data fetch. The Blog has an optional category dropdown for All posts, Conference slides, Research notes, Practical tutorials, and Teaching materials. It filters the existing list, announces the result count, and shows a message for empty categories. All posts remain readable without JavaScript. Old homepage links such as `/#research` and `/#outputs` redirect to their corresponding pages when JavaScript is enabled.
+`npm run check` verifies generated pages are current, local links/assets and section anchors resolve, navigation highlights the correct page, all publications are present in static HTML, the CV appears once per page, and legacy redirects resolve. The complete lists are served as static HTML without a runtime data fetch. The Blog has an optional category dropdown for All posts, Conference slides, Defence & exam slides, Research notes, Practical tutorials, and Teaching materials. It filters the existing list, announces the result count, and shows a message for empty categories. All posts remain readable without JavaScript. Old homepage links such as `/#research` and `/#outputs` redirect to their corresponding pages when JavaScript is enabled.
 
 ## Publish a blog post or course resource
 
-The Blog includes slide archives for PHYSMOD 2022, 2024, and 2026 and CFDSC / CSME 2025. Each post gets its own page and shares the site's navigation, footer, and typography. Each conference card on Publications is a single link to its matching post, with hover and keyboard-focus feedback. The posts include embedded PDF slides, open/download links, and a note directing readers to peer-reviewed journal articles for final versions of the studies. Each post header displays its title, author, and published date. Conference posts use the presentation date as their published date for citation; the full conference dates appear separately in each post.
+The Blog includes slide archives for PHYSMOD 2022, 2024, and 2026, CFDSC / CSME 2025, and the 2026 comprehensive exam. Each post gets its own page and shares the site's navigation, footer, and typography. Each conference card on Publications is a single link to its matching post, with hover and keyboard-focus feedback. The posts include embedded PDF slides, open/download links, and a note directing readers to peer-reviewed journal articles for final versions of the studies. Each post header displays its title, author, and published date. Presentation posts use the presentation date as their published date for citation; the full conference dates appear separately in conference posts.
 
-Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the supplied slide PDFs; PHYSMOD 2026 uses the supplied V2 PDF. The 2022 slides were exported from the supplied PowerPoint file. Only PDFs are included in the website. Preserve the conference-version note when adding further slide archives, and distinguish related journal papers from a final article covering the same study.
+Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the supplied slide PDFs; PHYSMOD 2026 uses the supplied V2 PDF. The 2022 slides were exported from the supplied PowerPoint file, and the comprehensive exam slides from the V2 PowerPoint. Only PDFs are included in the website. Preserve the presentation-version note when adding further slide archives, and distinguish related journal papers from a final article covering the same study. The author has clarified that the actual PHYSMOD 2024 talk presented the POD-LSE precursor to the 2026 Experiments in Fluids paper, rather than the scheduled SPOD work; preserve that distinction in the post.
 
 1. Write the article body in `site/posts/<slug>.html`. Use paragraphs, `h2`/`h3` headings, figures, lists, and code blocks as needed. The template supplies the `h1`, author, published date, summary, and category. The optional `author` field defaults to the site owner's name. Store figures or downloadable course materials under `assets/`; link to them as `assets/...` because generated articles live at the site root.
-2. Add a record to `site/posts.json`, using the presentation date for conference posts and the actual publication date for other posts. For example:
+2. Add a record to `site/posts.json`, using the presentation date for conference, defence, and exam posts and the actual publication date for other posts. For example:
 
    ```json
    {
@@ -68,7 +68,7 @@ Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the su
    }
    ```
 
-3. Run `npm run build` and `npm run check`, then preview. The example produces `blog-boundary-layer-notes.html` and a link on `blog.html`. Posts appear newest first. Use `Conference presentation`, `Research note`, `Tutorial`, or `Course material` for the four standard filter categories; another descriptive category is automatically added to the dropdown.
+3. Run `npm run build` and `npm run check`, then preview. The example produces `blog-boundary-layer-notes.html` and a link on `blog.html`. Posts appear newest first. Use `Conference presentation`, `Defence or exam`, `Research note`, `Tutorial`, or `Course material` for the standard filter categories; another descriptive category is automatically added to the dropdown.
 4. Commit the content, metadata, and generated pages together. Every entry is included in the build; there is no draft or scheduling mode. To retire a post, remove its metadata and generated HTML together, then rebuild.
 
 ## GitHub Pages

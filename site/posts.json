@@ -8,14 +8,6 @@
     "summary": "Slides from PHYSMOD 2026 on reconstructing large-scale atmospheric boundary-layer flow from sparse measurements using reduced-order models."
   },
   {
-    "slug": "comprehensive-exam-2026",
-    "title": "Comprehensive exam: Sensor-informed modelling of urban flow",
-    "author": "Haoran Du",
-    "date": "2026-02-23",
-    "category": "Defence or exam",
-    "summary": "Slides from my PhD comprehensive exam on using sparse sensor measurements and reduced-order models to reconstruct street canyon and atmospheric boundary-layer flow."
-  },
-  {
     "slug": "cfdsc-csme-2025",
     "title": "CFDSC / CSME 2025: Simulating street canyon flow",
     "author": "Haoran Du",

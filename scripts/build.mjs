@@ -34,7 +34,6 @@ const papers = publications.map((pub) => `<article class="publication" data-year
 </article>`).join('\n');
 const postCategories = new Map([
   ['Conference presentation', 'Conference slides'],
-  ['Defence or exam', 'Defence & exam slides'],
   ['Research note', 'Research notes'],
   ['Tutorial', 'Practical tutorials'],
   ['Course material', 'Teaching materials']

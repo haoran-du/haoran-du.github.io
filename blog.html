@@ -14,8 +14,8 @@
   <meta property="og:url" content="https://haoran-du.github.io/blog.html">
   <meta property="og:image" content="https://haoran-du.github.io/assets/images/profile-placeholder.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=ad13721fc335">
-  <script src="scripts.js?v=29b7828821e9" defer></script>
+  <link rel="stylesheet" href="style.css?v=b8f66e1448c3">
+  <script src="scripts.js?v=2a85d422b83e" defer></script>
 </head>
 <body data-page="blog">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,22 +50,34 @@
 </div>
 <section class="container blog-section" aria-labelledby="posts-heading">
   <h2 id="posts-heading" class="eyebrow">Presentations &amp; notes</h2>
-  <article class="blog-entry">
+  <div class="blog-filter" id="blog-filter" hidden>
+    <label for="blog-category">Filter by category</label>
+    <select id="blog-category" aria-controls="blog-posts">
+      <option value="">All posts</option>
+      <option value="Conference presentation">Conference slides</option>
+<option value="Research note">Research notes</option>
+<option value="Tutorial">Practical tutorials</option>
+<option value="Course material">Teaching materials</option>
+    </select>
+    <p class="blog-filter-status" id="blog-filter-status" role="status" aria-live="polite"></p>
+  </div>
+  <div id="blog-posts"><article class="blog-entry" data-category="Conference presentation">
   <div class="post-meta"><span>Conference presentation</span><time datetime="2026-08-26">August 26, 2026</time></div>
   <div><h3><a href="blog-physmod-2026.html">PHYSMOD 2026: Reconstructing large-scale flow from sparse measurements</a></h3><p>Slides from PHYSMOD 2026 on reconstructing large-scale atmospheric boundary-layer flow from sparse measurements using reduced-order models.</p></div>
 </article>
-<article class="blog-entry">
+<article class="blog-entry" data-category="Conference presentation">
   <div class="post-meta"><span>Conference presentation</span><time datetime="2025-05-28">May 28, 2025</time></div>
   <div><h3><a href="blog-cfdsc-csme-2025.html">CFDSC / CSME 2025: Simulating street canyon flow</a></h3><p>Slides from the 2025 congress on large-eddy simulations of street canyon flow with a drag-porosity modelled atmospheric boundary layer.</p></div>
 </article>
-<article class="blog-entry">
+<article class="blog-entry" data-category="Conference presentation">
   <div class="post-meta"><span>Conference presentation</span><time datetime="2024-08-29">August 29, 2024</time></div>
   <div><h3><a href="blog-physmod-2024.html">PHYSMOD 2024: Boundary-layer structures and street canyon flow</a></h3><p>Slides from PHYSMOD 2024 on reconstructing large-scale boundary-layer structures and examining their relationship with street canyon flow.</p></div>
 </article>
-<article class="blog-entry">
+<article class="blog-entry" data-category="Conference presentation">
   <div class="post-meta"><span>Conference presentation</span><time datetime="2022-08-29">August 29, 2022</time></div>
   <div><h3><a href="blog-physmod-2022.html">PHYSMOD 2022: An upstream tall building and street canyon flow</a></h3><p>Slides from PHYSMOD 2022 on wind-tunnel measurements of how an upstream tall building affects turbulence in a street canyon.</p></div>
-</article>
+</article></div>
+  <p class="blog-empty" id="blog-filter-empty" hidden>No posts in this category yet. Choose another category or All posts.</p>
 </section>
 </main>
   <footer class="site-footer">

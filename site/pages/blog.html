@@ -4,5 +4,14 @@
 </div>
 <section class="container blog-section" aria-labelledby="posts-heading">
   <h2 id="posts-heading" class="eyebrow">Presentations &amp; notes</h2>
-  {{posts}}
+  <div class="blog-filter" id="blog-filter" hidden>
+    <label for="blog-category">Filter by category</label>
+    <select id="blog-category" aria-controls="blog-posts">
+      <option value="">All posts</option>
+      {{postFilters}}
+    </select>
+    <p class="blog-filter-status" id="blog-filter-status" role="status" aria-live="polite"></p>
+  </div>
+  <div id="blog-posts">{{posts}}</div>
+  <p class="blog-empty" id="blog-filter-empty" hidden>No posts in this category yet. Choose another category or All posts.</p>
 </section>

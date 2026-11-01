@@ -46,11 +46,11 @@ Open `http://127.0.0.1:4173`. Stop the preview with Ctrl+C.
 - Add figures and CVs under `assets/`.
 - Run `npm run build` after editing templates, configuration, or publication data. The root HTML files are generated; do not edit them directly.
 
-`npm run check` verifies generated pages are current, local links/assets and section anchors resolve, navigation highlights the correct page, all publications are present in static HTML, the CV appears once per page, and legacy redirects resolve. The complete list is served as static HTML without filtering or a runtime data fetch. Old homepage links such as `/#research` and `/#outputs` redirect to their corresponding pages when JavaScript is enabled.
+`npm run check` verifies generated pages are current, local links/assets and section anchors resolve, navigation highlights the correct page, all publications are present in static HTML, the CV appears once per page, and legacy redirects resolve. The complete lists are served as static HTML without a runtime data fetch. The Blog has an optional category dropdown for All posts, Conference slides, Research notes, Practical tutorials, and Teaching materials. It filters the existing list, announces the result count, and shows a message for empty categories. All posts remain readable without JavaScript. Old homepage links such as `/#research` and `/#outputs` redirect to their corresponding pages when JavaScript is enabled.
 
 ## Publish a blog post or course resource
 
-The Blog includes slide archives for PHYSMOD 2022, 2024, and 2026 and CFDSC / CSME 2025. Each post gets its own page and shares the site's navigation, footer, and typography. Conference entries on Publications link to these posts. The posts include embedded PDF slides, open/download links, and a note directing readers to peer-reviewed journal articles for final versions of the studies. Each post header displays its title, author, and published date. Conference posts use the presentation date as their published date for citation; the full conference dates appear separately in each post.
+The Blog includes slide archives for PHYSMOD 2022, 2024, and 2026 and CFDSC / CSME 2025. Each post gets its own page and shares the site's navigation, footer, and typography. Each conference card on Publications is a single link to its matching post, with hover and keyboard-focus feedback. The posts include embedded PDF slides, open/download links, and a note directing readers to peer-reviewed journal articles for final versions of the studies. Each post header displays its title, author, and published date. Conference posts use the presentation date as their published date for citation; the full conference dates appear separately in each post.
 
 Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the supplied slide PDFs; PHYSMOD 2026 uses the supplied V2 PDF. The 2022 slides were exported from the supplied PowerPoint file. Only PDFs are included in the website. Preserve the conference-version note when adding further slide archives, and distinguish related journal papers from a final article covering the same study.
 
@@ -68,7 +68,7 @@ Slide PDFs are stored under `assets/slides/`. The 2024 and 2025 files use the su
    }
    ```
 
-3. Run `npm run build` and `npm run check`, then preview. The example produces `blog-boundary-layer-notes.html` and a link on `blog.html`. Posts appear newest first; category labels can be `Research note`, `Tutorial`, `Course material`, or another descriptive label.
+3. Run `npm run build` and `npm run check`, then preview. The example produces `blog-boundary-layer-notes.html` and a link on `blog.html`. Posts appear newest first. Use `Conference presentation`, `Research note`, `Tutorial`, or `Course material` for the four standard filter categories; another descriptive category is automatically added to the dropdown.
 4. Commit the content, metadata, and generated pages together. Every entry is included in the build; there is no draft or scheduling mode. To retire a post, remove its metadata and generated HTML together, then rebuild.
 
 ## GitHub Pages

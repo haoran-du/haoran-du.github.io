@@ -730,6 +730,32 @@ h3 {
   padding-bottom:70px
 }
 
+.blog-filter {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 18px;
+  margin-bottom:28px;
+  font-size:.85rem
+}
+
+.blog-filter select {
+  min-height:44px;
+  max-width:100%;
+  padding:9px 36px 9px 12px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--white);
+  color:var(--ink);
+  cursor:pointer
+}
+
+.blog-filter-status {
+  margin:0;
+  color:var(--muted);
+  font-size:.78rem
+}
+
 .blog-empty {
   padding:32px;
   color:var(--muted);
@@ -851,6 +877,23 @@ h3 {
   font-size:1.2rem;
   line-height:1.4;
   margin:0 0 6px
+}
+
+.presentation-link {
+  color:var(--ink);
+  text-decoration:none;
+  transition:border-color .18s,box-shadow .18s
+}
+
+.presentation-link:hover {
+  text-decoration:none;
+  border-color:var(--hover-line);
+  box-shadow:0 9px 26px rgba(56,66,72,.1)
+}
+
+.presentation-link:is(:hover,:focus-visible) h3 {
+  text-decoration:underline;
+  text-underline-offset:4px
 }
 
 .record p:not(.record-date) {

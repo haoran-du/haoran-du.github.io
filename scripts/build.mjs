@@ -32,7 +32,18 @@ const papers = publications.map((pub) => `<article class="publication" data-year
   ${pub.image ? `<img class="publication-image" src="${escape(pub.image)}" alt="Figure accompanying ${escape(pub.title)}" loading="lazy" width="300" height="225">` : '<div aria-hidden="true"></div>'}
   <div><h3>${escape(pub.title)}</h3><p>${escape(pub.authors)}</p><p class="venue">${escape(pub.venue)}</p>${pub.summary ? `<p class="publication-summary">${escape(pub.summary)}</p>` : ''}${pub.doi ? `<a class="doi" href="${escape(doi(pub.doi))}">DOI: ${escape(pub.doi.replace(/^https?:\/\/doi\.org\//i, '').replace(/^doi:\s*/i, ''))} <span aria-hidden="true">↗</span></a>` : ''}${pub.note ? `<p>${escape(pub.note)}</p>` : ''}</div>
 </article>`).join('\n');
-const postList = posts.length ? posts.map((post) => `<article class="blog-entry">
+const postCategories = new Map([
+  ['Conference presentation', 'Conference slides'],
+  ['Research note', 'Research notes'],
+  ['Tutorial', 'Practical tutorials'],
+  ['Course material', 'Teaching materials']
+]);
+for (const post of posts) {
+  const category = post.category || 'Note';
+  if (!postCategories.has(category)) postCategories.set(category, category);
+}
+const postFilters = [...postCategories].map(([value, label]) => `<option value="${escape(value)}">${escape(label)}</option>`).join('\n');
+const postList = posts.length ? posts.map((post) => `<article class="blog-entry" data-category="${escape(post.category || 'Note')}">
   <div class="post-meta"><span>${escape(post.category || 'Note')}</span><time datetime="${escape(post.date)}">${dateLabel(post.date)}</time></div>
   <div><h3><a href="blog-${escape(post.slug)}.html">${escape(post.title)}</a></h3><p>${escape(post.summary)}</p></div>
 </article>`).join('\n') : '<p class="blog-empty">No posts published yet. Research notes and course materials will appear here as they become available.</p>';
@@ -63,6 +74,7 @@ async function buildPage(page, content, extra = {}) {
     navigation: config.pages.map((item) => `<a href="${escape(item.file)}"${item.id === page.id ? ' aria-current="page"' : ''}>${escape(item.label)}</a>`).join('\n'),
     publications: papers,
     posts: postList,
+    postFilters,
     ...extra
   };
   const render = (template) => template.replace(/\{\{([\w.-]+)\}\}/g, (_, key) => {

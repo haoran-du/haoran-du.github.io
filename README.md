@@ -14,6 +14,10 @@ A responsive, multi-page academic website for GitHub Pages. Each tab has its own
 
 The navigation is Home, Research, Publications, Blog, Contact, and CV. The CV menu item opens the existing PDF. Old `about.html` links redirect to the background section on Home; `teaching.html` redirects to the CV. Redirects are configured alongside pages in `site/config.json`.
 
+## Academic positioning
+
+The agreed public identity is **Turbulence, Sensing & Prediction**. Frame the research around turbulent-flow physics and inference from sparse observations; atmospheric boundary layers, urban flows, and wind turbine wakes are research settings. Describe observability, optimal sensing, transferability, and predictability as developing directions unless supported by completed work. Preserve the distinction between published results, ongoing projects, and future aims.
+
 ## Content preservation
 
 The current CV is `assets/CV_HaoranDu_20261029.pdf`; older PDF versions have been removed from the website. The historical audit below describes the July 2026 CV used when simplifying the About and Teaching tabs:

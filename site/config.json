@@ -1,6 +1,6 @@
 {
   "name": "Haoran Du",
-  "tagline": "Environmental fluid mechanics",
+  "tagline": "Turbulence, Sensing & Prediction",
   "role": "PhD candidate at Western University",
   "affiliation": "Department of Mechanical and Materials Engineering",
   "institution": "Western University",
@@ -13,9 +13,9 @@
   "github": "https://github.com/haoran-du",
   "researchgate": "https://www.researchgate.net/profile/Haoran_Du2?ev=hdr_xprf",
   "pages": [
-    { "id": "home", "label": "Home", "file": "index.html", "title": "Haoran Du | Environmental Fluid Mechanics", "description": "Haoran Du studies atmospheric turbulence, urban flows, wind turbine wakes, and sensor-informed reduced-order modelling at Western University." },
-    { "id": "research", "label": "Research", "file": "research.html", "title": "Research | Haoran Du", "description": "Wind-tunnel experiments, large-eddy simulations, and sensor-informed models of urban canopy flow and wind turbine wakes." },
-    { "id": "publications", "label": "Publications", "file": "publications.html", "title": "Publications | Haoran Du", "description": "Selected journal publications and conference presentations by Haoran Du in environmental fluid mechanics." },
+    { "id": "home", "label": "Home", "file": "index.html", "title": "Haoran Du | Turbulence, Sensing & Prediction", "description": "Haoran Du combines experiments, simulations, and data-driven modelling to understand turbulent flows and investigate inference and prediction from sparse measurements." },
+    { "id": "research", "label": "Research", "file": "research.html", "title": "Research | Haoran Du", "description": "Turbulence physics and sparse sensing through experiments, simulations, and reduced-order modelling, with developing directions in observability and predictability." },
+    { "id": "publications", "label": "Publications", "file": "publications.html", "title": "Publications | Haoran Du", "description": "Selected journal publications and conference presentations by Haoran Du on turbulent flows, transport, and sensor-informed flow reconstruction." },
     { "id": "blog", "label": "Blog", "file": "blog.html", "title": "Blog | Haoran Du", "description": "Conference slides, research notes, practical tutorials, and teaching materials by Haoran Du." },
     { "id": "contact", "label": "Contact", "file": "contact.html", "title": "Contact | Haoran Du", "description": "Contact Haoran Du at Western University in London, Ontario, Canada." }
   ],

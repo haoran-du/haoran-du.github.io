@@ -691,14 +691,15 @@ h3 {
 
 .publication-links {
   display:flex;
-  flex-wrap:wrap;
-  align-items:baseline;
-  gap:8px 20px;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
   margin-top:6px
 }
 
 .publication .doi,
 .publication .code-link {
+  max-width:100%;
   display:inline-block;
   font-size:.76rem;
   overflow-wrap:anywhere

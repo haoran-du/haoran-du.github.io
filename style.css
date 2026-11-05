@@ -697,6 +697,7 @@ h3 {
   margin-top:6px
 }
 
+.publication .repository-link,
 .publication .doi,
 .publication .code-link {
   max-width:100%;

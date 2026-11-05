@@ -689,10 +689,18 @@ h3 {
   line-height:1.7;
 }
 
-.publication .doi {
+.publication-links {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:8px 20px;
+  margin-top:6px
+}
+
+.publication .doi,
+.publication .code-link {
   display:inline-block;
   font-size:.76rem;
-  margin-top:6px;
   overflow-wrap:anywhere
 }
 
